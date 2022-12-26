@@ -50,8 +50,8 @@ for (let i = 0; i < data.length; i++){
 }
 
 // STAMPO NEL DOM
-carouselDom.innerHTML = images;
-thumbDom.innerHTML = thumb;
+carouselDom.innerHTML = imagesGallery;
+thumbDom.innerHTML = thumbGallery;
 
 
 const carouselElements = document.querySelectorAll('#carousel .gallery');

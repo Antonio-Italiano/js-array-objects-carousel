@@ -13,7 +13,7 @@ img{
     display: none;
 } 
 
-#carousel .gallery .active{
+#carousel .gallery.active{
     display: block;
 }
 
@@ -36,11 +36,12 @@ img{
 
 
 /* THUMB */
-    #thumb{
+#thumb{
     width: 15vw;
+    height: 500px;
 }
 
-#thumb img .selected{
+#thumb img.selected{
     border: 5px solid #84fe84;  
 }
 
