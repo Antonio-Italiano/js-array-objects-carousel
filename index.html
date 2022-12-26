@@ -13,34 +13,18 @@
     <!-- Script    -->
     <script defer src="js/script.js"></script>
 </head>
-<body>
-    <section id="carousel" class="container">
-        <!-- principal part -->
-        <div class="row justify-content-center">
-            <div class="col-10 d-flex">
-                <figure id="principal" class="">
-                    <img src="img/01.webp" alt="">
-                    <div class="text text-end text-white">
-                        <h4>Marvel's Avengers</h4>
-                        <h6>Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.</h6>
-                    </div>
-                </figure>
-                <div id="thumbnails">
-                    <figure>
-                        <i class="bi bi-arrow-up-square bi-arrow-custom"></i>
-                        <img src="img/01.webp" alt="">
-                        <img src="img/02.webp" alt="">
-                        <img src="img/03.webp" alt="">
-                        <img src="img/04.webp" alt="">
-                        <img src="img/05.webp" alt="">
-                        <i class="bi bi-arrow-down-square bi-arrow-custom"></i>
-                    </figure>
-                </div>
-            </div>
+<body>      
+    <div class="container d-flex direction-column align-items-center my-4">
+        <button id="prev-button" class="border-0 bg-transparent">
+            <i class="bi bi-arrow-left-square-fill btn"></i>
+        </button>
+        <div class="container-images d-flex justify-content-center align-items-center">
+            <div id="carousel"></div> 
+            <div id="thumb"></div>
         </div>
-        
-        <!-- secondary part -->
-        
-    </section>
+        <button id="next-button" class="border-0 bg-transparent">
+            <i class="bi bi-arrow-right-square-fill btn"></i>
+        </button>
+    </div>
 </body>
 </html>
