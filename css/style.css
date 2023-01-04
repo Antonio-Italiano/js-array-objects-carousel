@@ -32,6 +32,7 @@ img{
     height: 500px;
     width: 60vw;
     position: relative;
+    border: 10px solid rgba(0, 0, 0, 0.621);
 }
 
 
@@ -41,7 +42,7 @@ img{
     height: 500px;
 }
 
-#thumb img.selected{
+#thumb img.active{
     border: 5px solid #84fe84;  
 }
 

@@ -1,3 +1,28 @@
+// FUNZIONI
+const changePic = (choice) => {
+  // Rimuovere classe active
+  carouselElements[index].classList.remove('active');
+  thumbImages[index].classList.remove('active');
+  
+  if(choice === 'buttonNext'){
+    // incremento index
+    index++;
+    if (index === carouselElements.length)index = 0;
+
+  } else if (choice === 'buttonPrev'){
+    // decremento index
+    index--;
+    if (index < 0)index = carouselElements.length - 1;
+
+  } else {
+    // assegno index 
+    index = choice;
+  }
+  // Aggiungere classe active
+  carouselElements[index].classList.add('active');
+  thumbImages[index].classList.add('active');
+}
+
 // ARRAY DI OGGETTI CON INFORMAZIONI DA AGGIUNGERE IN PAG
 const data = [
   {
@@ -29,7 +54,6 @@ const thumbDom = document.getElementById('thumb');
 const buttonPrev = document.getElementById('prev-button');
 const buttonNext = document.getElementById('next-button');
 
-
 // CREO LE VARIABILI D'APPOGGIO
 let imagesGallery = '';
 let thumbGallery = '';
@@ -53,72 +77,30 @@ for (let i = 0; i < data.length; i++){
 carouselDom.innerHTML = imagesGallery;
 thumbDom.innerHTML = thumbGallery;
 
-
 const carouselElements = document.querySelectorAll('#carousel .gallery');
 const thumbImages = document.querySelectorAll('#thumb img');
-
-
 
 let index = 0;
 carouselElements[index].classList.add('active');
 thumbImages[index].classList.add('selected');
 
-// CREO L'EVENTO AL CLICK SUL BOTTONE
+// CREO L'EVENTO AL CLICK SUL BOTTONE NEXT
 buttonNext.addEventListener('click', function(){
-  
-  carouselElements[index].classList.remove('active');
-  thumbImages[index].classList.remove('selected');
-
-  index++;
-
-  if (index === carouselElements.length){
-    index = 0;
-  }
-
-  carouselElements[index].classList.add('active');
-  thumbImages[index].classList.add('selected');
+  changePic('buttonNext');
 
 })
 
-// CREO L'EVENTO AL CLICK SUL BOTTONE
+// CREO L'EVENTO AL CLICK SUL BOTTONE PREV
 buttonPrev.addEventListener('click', function(){
+  changePic('buttonPrev');
   
-  carouselElements[index].classList.remove('active');
-  thumbImages[index].classList.remove('selected');
-
-  index--;
-
-  if (index < 0){
-    index = carouselElements.length - 1;
-  }
-
-  carouselElements[index].classList.add('active');
-  thumbImages[index].classList.add('selected');
-
 })
-
 
 for (let i = 0; i < thumbImages.length; i++){
 
-     const imgThumb = thumbImages[i];
-
-     imgThumb.addEventListener('click', function(){
-       carouselElements[index].classList.remove('active');
-       thumbImages[index].classList.remove('selected');
-       
-       index = i;
-       
-       carouselElements[index].classList.add('active');
-       thumbImages[index].classList.add('selected');
- 
-     })
+  const imgThumb = thumbImages[i];
+  // CREO L'EVENTO AL CLICK SUL THUMB  
+  imgThumb.addEventListener('click', function(){
+    changePic(i);     
+  })
 }
-
-
-
-
-
-
-
-
-
